@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./nodejs-microservice
+    container_name: test-nodejs-microservice
+    ports:
+      - 4000:4000
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: test
+      MYSQL_HOST: mysqldb
+    links:
+      - mysqldb
+  mysqldb:
+    build:
+      context: ./mysql-microservice
+    restart: always
+    container_name: test-mysql-microservice
+    ports:
+      - 6603:3306
+    volumes:
+      - /home/asvin/Desktop/devops/docker-projects/getting-started-docker-mysql-nodejs/data:/var/lib/mysql
