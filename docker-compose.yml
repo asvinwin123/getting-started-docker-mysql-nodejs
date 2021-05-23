@@ -22,4 +22,4 @@ services:
     ports:
       - 6603:3306
     volumes:
-      - /home/asvin/Desktop/devops/docker-projects/getting-started-docker-mysql-nodejs/data:/var/lib/mysql
+      - /home/asvin/Desktop/devops/docker-projects/getting-started-docker-mysql-nodejs/mysql-microservice/data:/var/lib/mysql
